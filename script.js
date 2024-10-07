@@ -3,20 +3,15 @@ const para = document.createElement('p');
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice(hands) {
-    const randomHand = Math.floor(Math.random() * hands.length);
-    let computerSelection = hands[randomHand];
-
-    return computerSelection;
-
-}
-
 console.log(getComputerChoice(hands));
 let humanChoice;
 
-function getHumanChoice(hands) {
-    let humanPlay = window.prompt("rock, paper, or scissor?");
-    let humanSelection = humanPlay();
+function getHumanChoice() {
+    humanPlay = prompt("rock, paper, or scissor?");
+    let humanChoice;
+
+    /* transforms input to lowercase*/
+    humanPlay = humanPlay.toLowerCase();
 
     if(humanPlay === "rock"){
         humanChoice = "rock";
@@ -28,6 +23,15 @@ function getHumanChoice(hands) {
         console.log("invalid choice, please pick from the three (3) options.")
     }
     console.log("player chose " + humanChoice);
+}
+getHumanChoice();
+
+function getComputerChoice(hands) {
+    const randomHand = Math.floor(Math.random() * hands.length);
+    let computerSelection = hands[randomHand];
+
+    return computerSelection;
+
 }
 
 function round(){
