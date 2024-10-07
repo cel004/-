@@ -4,35 +4,31 @@ let computerScore = 0;
 
 function getComputerChoice(hands) {
     const randomHand = Math.floor(Math.random() * hands.length);
-    
+
     return hands[randomHand];
 
 }
 
 function getHumanChoice() {
-    humanPlay = prompt("rock, paper, or scissor?");
-    let humanChoice;
+    let humanPlay = prompt("rock, paper, or scissor?");
 
     /* transforms input to lowercase*/
     humanPlay = humanPlay.toLowerCase();
 
-    if(humanPlay === "rock"){
-        humanChoice = "rock";
-    } else if(getHumanChoice === "paper") {
-        humanChoice = "paper";
-    } else if(getHumanChoice === "scissor"){
-        humanChoice = "scissor";
+    if(hands.includes(humanPlay)){
+        console.log("player chose " + humanPlay);
+        return humanPlay;
     } else{
         console.log("invalid choice, please pick from the three (3) options.")
+        return getHumanChoice();
     }
-    console.log("player chose " + humanChoice);
 }
-getHumanChoice();
-
 
 function round(){
-    getComputerChoice();
-    getHumanChoice();
+    const getComputerChoice = getComputerChoice();
+    const getHumanChoice = getHumanChoice();
+
+    console.log("computer chose " +getComputerChoice);
 
     if(computerSelection === humanChoice){
         console.log("tie");
