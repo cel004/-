@@ -39,9 +39,9 @@ function round(){
             console.log("computer wins the round!")
         } else{
             humanScore++;
-            console.log("human wins this round");
+            console.log("player wins this round");
         }
-        console.log(`human score: ${humanScore}, computer score: ${computerScore}`);
+        console.log(`player score: ${humanScore}, computer score: ${computerScore}`);
     }
 
 function playGame(){
@@ -50,7 +50,7 @@ function playGame(){
         }
 
         if(humanScore > computerScore){
-            console.log("human wins with a score of " + humanScore);
+            console.log("player wins with a score of " + humanScore);
         } else{
             console.log("computer wins with a score of " + computerScore);
         }
