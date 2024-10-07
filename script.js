@@ -27,7 +27,7 @@ function round(){
     const computerChoice = getComputerChoice();
     const humanChoice = getHumanChoice();
 
-    console.log("computer chose " +getComputerChoice);
+    console.log("computer chose " + computerChoice);
 
     if(computerChoice === humanChoice){
         console.log("tie");
@@ -49,7 +49,7 @@ function playGame(){
             round();
         }
 
-        if(humanScore >= 5){
+        if(humanScore > computerScore){
             console.log("human wins with a score of " + humanScore);
         } else{
             console.log("computer wins with a score of " + computerScore);
