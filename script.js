@@ -12,23 +12,51 @@ function getComputerChoice(hands) {
 }
 
 console.log(getComputerChoice(hands));
+let humanChoice;
 
 function getHumanChoice(hands) {
     let humanPlay = window.prompt("rock, paper, or scissor?");
-    let humanSelection = humanPlay;
+    let humanSelection = humanPlay();
 
     if(humanPlay === "rock"){
-        console.log("rock");
+        humanChoice = "rock";
     } else if(getHumanChoice === "paper") {
-        console.log("paper");
+        humanChoice = "paper";
     } else if(getHumanChoice === "scissor"){
-        console.log("scissor");
+        humanChoice = "scissor";
     } else{
         console.log("invalid choice, please pick from the three (3) options.")
     }
-    return humanSelection;
+    console.log("player chose " + humanChoice);
 }
 
-function playRound(humanChoice, computerChoice){
+function round(){
+    getComputerChoice();
+    getHumanChoice();
 
-}
+    if(computerSelection === humanChoice){
+        console.log("tie");
+    } else if(
+        (computerScore === "rock" && humanChoice === "scissors") ||
+        (computerScore === "paper" && humanChoice === "rock") ||
+        (computerScore === "scissor" && humanChoice === "paper")){
+            computerScore++;
+            console.log("computer wins the round!")
+        } else{
+            humanScore++;
+            console.log("human wins this round");
+        }
+        console.log(`human score: ${humanScore}, computer score: ${computerScore}`);
+    }
+
+function playGame(){
+        while((humanScore + computerScore) < 5){
+            round();
+        }
+
+        if(humanScore >= 5){
+            console.log("human wins with a score of " + humanScore);
+        } else{
+            console.log("computer wins with a score of " + computerScore);
+        }
+    }
