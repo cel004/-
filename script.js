@@ -1,12 +1,11 @@
-const hands = ['rock', 'paper', 'scissor']
+const hands = ['rock', 'paper', 'scissor'];
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice(hands) {
-    const computerChoice = Math.floor(Math.random() * hands.length);
+function getComputerChoice() {
+    const randomIndex = Math.floor(Math.random() * hands.length);
 
-    return hands[computerChoice];
-
+    return hands[randomIndex]; // returns the computers choice
 }
 
 function getHumanChoice() {
@@ -25,12 +24,12 @@ function getHumanChoice() {
 }
 
 function round(){
-    const getComputerChoice = getComputerChoice();
-    const getHumanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    const humanChoice = getHumanChoice();
 
     console.log("computer chose " +getComputerChoice);
 
-    if(computerSelection === humanChoice){
+    if(computerChoice === humanChoice){
         console.log("tie");
     } else if(
         (computerChoice === "rock" && humanChoice === "scissors") ||
@@ -56,3 +55,6 @@ function playGame(){
             console.log("computer wins with a score of " + computerScore);
         }
     }
+
+    playGame();
+
