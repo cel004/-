@@ -1,10 +1,13 @@
 const hands = ['rock', 'paper', 'scissor']
-const para = document.createElement('p');
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(getComputerChoice(hands));
-let humanChoice;
+function getComputerChoice(hands) {
+    const randomHand = Math.floor(Math.random() * hands.length);
+    
+    return hands[randomHand];
+
+}
 
 function getHumanChoice() {
     humanPlay = prompt("rock, paper, or scissor?");
@@ -26,13 +29,6 @@ function getHumanChoice() {
 }
 getHumanChoice();
 
-function getComputerChoice(hands) {
-    const randomHand = Math.floor(Math.random() * hands.length);
-    let computerSelection = hands[randomHand];
-
-    return computerSelection;
-
-}
 
 function round(){
     getComputerChoice();
