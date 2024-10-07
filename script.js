@@ -3,9 +3,9 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice(hands) {
-    const randomHand = Math.floor(Math.random() * hands.length);
+    const computerChoice = Math.floor(Math.random() * hands.length);
 
-    return hands[randomHand];
+    return hands[computerChoice];
 
 }
 
@@ -33,9 +33,9 @@ function round(){
     if(computerSelection === humanChoice){
         console.log("tie");
     } else if(
-        (computerScore === "rock" && humanChoice === "scissors") ||
-        (computerScore === "paper" && humanChoice === "rock") ||
-        (computerScore === "scissor" && humanChoice === "paper")){
+        (computerChoice === "rock" && humanChoice === "scissors") ||
+        (computerChoice === "paper" && humanChoice === "rock") ||
+        (computerChoice === "scissor" && humanChoice === "paper")){
             computerScore++;
             console.log("computer wins the round!")
         } else{
